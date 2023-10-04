@@ -1,8 +1,26 @@
 const mongoose = require('mongoose');
 
-const songSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  // Add more fields as per your product requirements
-});
+const song = new mongoose.Schema({
+    tittle: {
+        required: true,
+        type: String
+    },
+    author: {
+        required: true,
+        type: String
+    },
+    release: {
+        required: true,
+        type: Number
+    },
+    type : {
+        required: true,
+        type: Array
+    },
+    track :{
+      require: true,
+      type : String
+    }
+})
 
-module.exports = mongoose.model('song', songSchema);
+module.exports = mongoose.model('Song', song)

@@ -19,13 +19,8 @@ database.once('open', () => {
 });
 
 
-app.get('/status', (request, response) => {
-    const status = {
-        "Status": "Running"
-    };
-
-    response.json(status); // Use json() to send JSON response
-});
+app.use(express.json())
+app.use('/api', routes)
 
 const port = process.env.PORT || 3000;
 
