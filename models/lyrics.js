@@ -12,7 +12,11 @@ const lyricrs = new mongoose.Schema({
     text: {
         required: true,
         type: String
-    }
+    },
+    track :{
+        require: true,
+        type : String
+      }
 })
 
 module.exports = mongoose.model('Song', song)

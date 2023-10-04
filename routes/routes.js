@@ -49,13 +49,15 @@ router.post('/addLyrics', async (req, res) => {
         const {
             title,
             author,
-            text
+            text,
+            track
         } = req.body;
 
         const newLyrics = new Lyrics({
             title,
             author,
-            text
+            text,
+            track
         });
 
         const savedLyrics = await newLyrics.save();
