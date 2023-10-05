@@ -2,7 +2,6 @@ const express = require("express");
 const Song = require('../models/song');
 const Lyrics = require('../models/lyrics'); // Import Lyrics model if needed
 
-<<<<<<< HEAD
 const router = express.Router()
 
 module.exports = router;
@@ -17,14 +16,6 @@ router.get('/getAll', async (req, res) => {
 });
 
 
-=======
-const router = express.Router();
-
-// Define routes for getting all songs and getting one song
-router.get('/getAll', (req, res) => {
-    res.send('GET ALL API');
-});
->>>>>>> f166a1966434e5783fc2bec45bf3850ee10ae7b4
 
 router.get('/getOneSong', (req, res) => {
     res.send(req.body);
