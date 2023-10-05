@@ -1,14 +1,20 @@
 const express = require("express")
 const Song = require('../models/song')
 
-
 const router = express.Router()
 
 module.exports = router;
 
-router.get('/getAll', (req, res) => {
-    res.send('GET ALL API')
-})
+router.get('/getAll', async (req, res) => {
+    try {
+        const songs = await Song.find(); // Récupère toutes les chansons
+        res.json(songs);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+
 
 router.get('/getOneSong', (req, res) => {
     res.send(req.body)
